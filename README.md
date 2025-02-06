@@ -13,3 +13,7 @@ el puerto por defecto de mysql es 3306 por lo que debes hacer el cambio si lo re
 la db esta en el drive donde la puedes descargar 
 
 ##
+![image](https://github.com/user-attachments/assets/ed932e72-ce26-4c10-abee-303234303c73)
+##
+como ves en la imagen se uso el sdk 21.0.2 esto por lo que se uso java 21  tienes que ver la configuracion de tu sdk
+la puedes ver en File/Project structure y ahi puedes ver la configuracion necesaria 
