@@ -1,0 +1,18 @@
+spring:
+  application:
+    name: pruebatecnica
+  datasource:
+    url: jdbc:mysql://localhost:3308/task?serverTimezone=UTC
+    username: root
+    password:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  jpa:
+    database-platform: org.hibernate.dialect.MySQL8Dialect
+    hibernate:
+      ddl-auto: none  # Puede ser update, create, create-drop o validate
+    show-sql: true      # Muestra las consultas SQL en consola
+    properties:
+     hibernate:
+      format_sql: true
+
