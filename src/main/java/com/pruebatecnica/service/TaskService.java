@@ -1,8 +1,10 @@
 package com.pruebatecnica.service;
 
+import com.pruebatecnica.exception.CustomException;
 import com.pruebatecnica.models.Task;
 import com.pruebatecnica.repository.TaskRepository;
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -20,9 +22,9 @@ public class TaskService implements ITaskService {
     }
 
     @Override
-    public Task findById(Long id) {
+    public Task findById(Long id) throws CustomException {
         return taskRepository.findById(id)
-                .orElseThrow(() -> new RuntimeException("Tarea no encontrada con ID: " + id));
+                .orElseThrow(() -> new CustomException("User not found","User not foung", HttpStatus.NOT_FOUND.value()));
     }
 
     @Override
@@ -31,7 +33,7 @@ public class TaskService implements ITaskService {
     }
 
     @Override
-    public Task update(Long id, Task taskDetails) {
+    public Task update(Long id, Task taskDetails) throws CustomException {
         Task existingTask = findById(id);
         existingTask.setTitulo(taskDetails.getTitulo());
         existingTask.setDescripcion(taskDetails.getDescripcion());
@@ -40,7 +42,7 @@ public class TaskService implements ITaskService {
     }
 
     @Override
-    public void delete(Long id) {
+    public void delete(Long id) throws CustomException {
         Task existingTask = findById(id);
         taskRepository.delete(existingTask);
     }

@@ -2,16 +2,16 @@ spring:
   application:
     name: pruebatecnica
   datasource:
-    url: jdbc:mysql://localhost:3308/task?serverTimezone=UTC
-    username: root
-    password:
+    url: jdbc:mysql://reddemarcasdb.cr48gy6omv0v.us-east-1.rds.amazonaws.com/task?serverTimezone=UTC
+    username: admin
+    password: Lucia290820*
     driver-class-name: com.mysql.cj.jdbc.Driver
 
   jpa:
     database-platform: org.hibernate.dialect.MySQL8Dialect
     hibernate:
-      ddl-auto: none  # Puede ser update, create, create-drop o validate
-    show-sql: true      # Muestra las consultas SQL en consola
+      ddl-auto: none
+    show-sql: true
     properties:
      hibernate:
       format_sql: true
